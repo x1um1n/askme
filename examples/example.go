@@ -1,20 +1,23 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/x1um1n/askme"
 )
 
 func main() {
+	// Yes/No example usage
 	if askme.AskYN("Is the sky blue?") {
-		println("Correct!")
+		fmt.Println("Correct!")
 	} else {
+		// Yes/No/Quit/Skip example usage
 		switch askme.Ask("Are you feeling ok?") {
 		case askme.Yes:
-			println("I'm glad to hear that!")
+			fmt.Println("I'm glad to hear that!")
 		case askme.No:
-			println("I sense a deep dejection in your diodes Robot. It saddens me & I globber.")
+			fmt.Println("I sense a deep dejection in your diodes Robot. It saddens me & I globber.")
 		case askme.Skip:
 			os.Exit(1)
 		case askme.Quit:
